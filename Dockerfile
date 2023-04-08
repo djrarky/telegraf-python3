@@ -14,6 +14,7 @@ RUN \
   pip install -r /opt/scripts/tplink-hs110-telegraf/requirements.txt && \
   pip install -r /opt/scripts/huawei-lte-telegraf/requirements.txt && \
 # cleanup
+  rm /opt/scripts/huawei-lte-telegraf -r && \
   apt clean
   
 VOLUME /opt/scripts
