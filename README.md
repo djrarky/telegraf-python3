@@ -19,7 +19,7 @@ services:
     image: djrarky/telegraf-python3
     container_name: telegraf
     restart: always
-    network_mode "host"
+    network_mode: "host"
     volumes:
       - location/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - location/scripts:/opt/scripts
