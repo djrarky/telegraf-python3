@@ -2,6 +2,11 @@
 - [Telegraf Importer for TP Link Smart plugs](https://github.com/djrarky/tplink-hs110-telegraf)
 - [Telegraf Importer for Huawei 4G / 5G Routers](https://github.com/djrarky/huawei-lte-telegraf)
 
+##### Note, not yet hosted on dockerhub, to build:
+```
+git clone https://github.com/djrarky/telegraf-python3.git
+docker build -t telegraf-python3 telegraf-python3
+```
 ## Configure
 ### Run in Docker
 ```
@@ -10,13 +15,13 @@ docker run -d --name=telegraf \
   --restart=always \
   -v location/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
   -v location/scripts:/opt/scripts \
-  djrarky/telegraf-python3
+  telegraf-python3
 ```
 ### Docker Compose Setup
 ~~~yml
 services:
   telegraf:
-    image: djrarky/telegraf-python3
+    image: telegraf-python3
     container_name: telegraf
     restart: always
     network_mode: "host"
