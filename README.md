@@ -6,6 +6,7 @@
 ### Run in Docker
 ```
 docker run -d --name=telegraf \
+  --network host \
   --restart=always \
   -v location/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
   -v location/scripts:/opt/scripts \
@@ -18,6 +19,7 @@ services:
     image: djrarky/telegraf-python3
     container_name: telegraf
     restart: always
+    network_mode "host"
     volumes:
       - location/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - location/scripts:/opt/scripts
