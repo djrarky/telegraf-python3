@@ -12,6 +12,8 @@ RUN \
   git clone https://github.com/djrarky/huawei-lte-telegraf.git /opt/scripts/huawei-lte-telegraf && \
 # install python requirements
   pip install -r /opt/scripts/tplink-hs110-telegraf/requirements.txt && \
-  pip install -r /opt/scripts/huawei-lte-telegraf/requirements.txt
+  pip install -r /opt/scripts/huawei-lte-telegraf/requirements.txt && \
+# cleanup
+  apt clean
   
 VOLUME /opt/scripts
