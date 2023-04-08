@@ -27,7 +27,7 @@ services:
 [[inputs.exec]]
   ## Commands array
   commands = [
-    "python3 /opt/scripts/tplink-hs110-telegraf/telegraf-tplink-hs110.py 'plugName1' 'IPAddress1' 'plugName2' 'IPAddress2'"
+    "python3 /opt/scripts/tplink-hs110-telegraf/telegraf-tplink-hs110.py 'plugName1' 'IPAddress1' 'plugName2' 'IPAddress2'",
     "python3 /opt/scripts/huawei-lte-telegraf/telegraf-huawei-lte.py 'http://username:password@IP Address/'"
   ]
 
