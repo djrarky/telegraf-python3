@@ -1,4 +1,5 @@
 FROM telegraf:latest
+LABEL org.opencontainers.image.source="https://github.com/djrarky/telegraf-python3"
 
 RUN \
 # Install python3, git & pip
