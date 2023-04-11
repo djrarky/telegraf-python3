@@ -3,27 +3,13 @@ on:
   push:
   schedule:
     - cron:  '0 4 * * 1'
-  
+
 jobs:
   push_to_registry:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout GitHub Action
         uses: actions/checkout@main
-        
-#      - name: Check if update available
-#        id: baseupdatecheck
-#        uses: giggio/docker-image-update-checker@v2
-#        with:
-#          base-image: telegraf:latest
-#          image: ghcr.io/djrarky/telegraf-python3
-    
-#      - name: Login to Docker Hub
-#        uses: docker/login-action@v2
-#        with:
-#          username: ${{ secrets.DOCKERHUB_USERNAME }}
-#          password: ${{ secrets.DOCKERHUB_TOKEN }}
-#        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
@@ -31,13 +17,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-#        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
-
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v4
-        with:
-          platforms: linux/amd64
-          push: true
-          tags: djrarky/telegraf-python3:latest
-          labels: ${{ steps.meta.outputs.labels }}
-#        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
+      - name: Build Image
+        run: |
+          docker build . --tag ghcr.io/djrarky/telegraf-python3:latest
+          docker push ghcr.io/djrarky/telegraf-python3:latest
