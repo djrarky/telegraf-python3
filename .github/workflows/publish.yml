@@ -38,6 +38,6 @@ jobs:
         with:
           platforms: linux/amd64
           push: true
-          tags: latest
+          tags: djrarky/telegraf-python3:latest
           labels: ${{ steps.meta.outputs.labels }}
 #        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
