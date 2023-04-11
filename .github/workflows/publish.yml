@@ -14,7 +14,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Image
-run: |
-       docker build . --tag ghcr.io/djrarky/telegraf-python3:latest
-       docker run ghcr.io/djrarky/telegraf-python3:latest
-       docker push ghcr.io/djrarky/telegraf-python3:latest
+        run: |
+          docker build . --tag ghcr.io/djrarky/telegraf-python3:latest
+          docker run ghcr.io/djrarky/telegraf-python3:latest
+          docker push ghcr.io/djrarky/telegraf-python3:latest
