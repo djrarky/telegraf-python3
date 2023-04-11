@@ -38,6 +38,6 @@ jobs:
         with:
           platforms: linux/amd64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: latest
           labels: ${{ steps.meta.outputs.labels }}
 #        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
