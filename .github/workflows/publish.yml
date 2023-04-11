@@ -6,6 +6,13 @@ jobs:
     steps:
       - name: Checkout GitHub Action
         uses: actions/checkout@main
+        
+      - name: CHeck if update available
+        id: baseupdatecheck
+        uses: lucacome/docker-image-update-checker@v1
+        with:
+          base-image: telegraf:latest
+          image: ghcr.io/djrarky/telegraf-python3
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
@@ -13,7 +20,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
       - name: Build Image
         run: |
           docker build . --tag ghcr.io/djrarky/telegraf-python3:latest
           docker push ghcr.io/djrarky/telegraf-python3:latest
+        if: steps.baseupdatecheck.outputs.needs-updating == 'true'
