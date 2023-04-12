@@ -31,6 +31,7 @@ services:
   commands = [
     "python3 /opt/scripts/tplink-hs110-telegraf/telegraf-tplink-hs110.py 'plugName1' 'IPAddress1' 'plugName2' 'IPAddress2'",
     "python3 /opt/scripts/huawei-lte-telegraf/telegraf-huawei-lte.py 'http://username:password@IP Address/'"
+    "python3 /opt/scripts/huawei-hg612-telegraf/dsl-stats-to-influxdb-3.py 'IPAddress' 'username' 'password'"
   ]
 
   ## measurement name suffix (for separating different commands)
