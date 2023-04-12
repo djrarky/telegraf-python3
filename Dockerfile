@@ -11,6 +11,7 @@ RUN \
   git config --global --add safe.directory /opt/scripts && \
   git clone https://github.com/djrarky/tplink-hs110-telegraf.git /opt/scripts/tplink-hs110-telegraf && \
   git clone https://github.com/djrarky/huawei-lte-telegraf.git /opt/scripts/huawei-lte-telegraf && \
+  git clone https://github.com/djrarky/huawei-hg612-telegraf.git /opt/scripts/huawei-hg612-telegraf.git && \
 # install python requirements
   pip install -r /opt/scripts/tplink-hs110-telegraf/requirements.txt && \
   pip install -r /opt/scripts/huawei-lte-telegraf/requirements.txt && \
