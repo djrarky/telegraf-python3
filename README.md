@@ -1,6 +1,7 @@
 # Telegraf container containing prerequisites for the following scripts
 - [Telegraf Importer for TP Link Smart plugs](https://github.com/djrarky/tplink-hs110-telegraf)
 - [Telegraf Importer for Huawei 4G / 5G Routers](https://github.com/djrarky/huawei-lte-telegraf)
+- [Telegraf Importer for Huawei HG612 Modems](https://github.com/djrarky/huawei-hg612-telegraf)
 
 ## Configure
 ### Run in Docker
