@@ -10,7 +10,6 @@ docker run -d --name=telegraf \
   --network host \
   --restart=always \
   -v location/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
-  -v location/scripts:/opt/scripts \
   ghcr.io/djrarky/telegraf-python3
 ```
 ### Docker Compose Setup
